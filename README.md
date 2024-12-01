@@ -1,8 +1,20 @@
-# React + Vite
+# Campers App for TravelTrucks Company
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This single-page application (SPA) is developed with the React library, providing a seamless and efficient user experience for managing camper rentals
 
-Currently, two official plugins are available:
+## App overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+From the **Homepage**, users can navigate to the **Catalog**, where they can explore all available vehicles and filter by criteria such as
+
+- location
+- vehicle type
+- air conditioning availability
+- kitchen amenities etc.
+  Users also have the option to add campers to their favorites.
+
+By clicking on a selected camper, users are taken to the individual camper page, which includes
+
+- a detailed description
+- a photo gallery
+- user reviews
+- a booking form.

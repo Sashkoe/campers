@@ -1,0 +1,20 @@
+.camperItem {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #dadde1;
+  background: var(--White, #fff);
+}
+
+.camperItemInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+.camperItemLink {
+  margin: 0;
+  padding: 16px 40px;
+}

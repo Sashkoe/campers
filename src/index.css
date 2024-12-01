@@ -1,41 +1,46 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --Main: #101828;
+  --White: #fff;
+  --Light: #ffffff;
+  --Gray-light: #dadde1;
+  --Dark: #101828;
+  --Text: #475467;
+  --Inputs: #f7f7f7;
+  --Badges: #f2f4f7;
+  --Light-red: #f0b1b1;
+  --Error: #ed6f6f;
+  --Button: #e44848;
+  --Button-Hover: #d84343;
+  --Url-active-hover: #d84343;
+  --Link-background: #e44848;
+  --Link-hover-background: #d84343;
 }
 
 body {
   margin: 0;
+}
+
+#root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -46,12 +51,54 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+} */
+
+a {
+  font-weight: 500;
+  color: var(--Main);
+  text-decoration: inherit;
+  transition: color 0.2s ease;
+  &:hover {
+    color: var(--Url-active-hover);
+  }
+}
+
+.link {
+  display: inline-block;
+  width: fit-content;
+  color: var(--White, #fff);
+  margin-top: 40px;
+  border-radius: 200px;
+  letter-spacing: -0.005em;
+  background: var(--Link-background);
+  padding: 16px 49px;
+  transition: all 0.2s ease;
+  &:hover,
+  &:focus {
+    background: var(--Link-hover-background);
+    color: var(--White, #fff);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: light) {
@@ -59,10 +106,68 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    color: #ffffff;
+    background-color: #213547;
   }
-  button {
-    background-color: #f9f9f9;
+} */
+
+.container {
+  /* margin: 0 auto; */
+  /* max-width: 1440px; */
+  /* container-type: inline-size; */
+  padding: 0 64px;
+
+  @media screen and (max-width: 374px) {
+    /* max-width: 300px; */
+    padding: 0 20px;
   }
+
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    /* max-width: 375px; */
+    padding: 0 40px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    /* max-width: 768px; */
+  }
+}
+
+/* Reset */
+
+*,
+*:is(::after, ::before) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
